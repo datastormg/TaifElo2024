@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أولمبياد اللغة الإنجليزية 2025</title>
+
+    <style>
+        /* تضمين الخط DGAgnadeen-Bold من ملف محلي */
+        @font-face {
+            font-family: 'DGAgnadeen-Bold';
+            src: url(DGAgnadeen-Bold.ttf) format('truetype'); /* المسار المحلي لملف الخط */
+            font-weight: bold; /* تحديد الوزن العريض */
+            font-style: normal; /* تحديد النمط العادي */
+        }
+
+        /* تنسيق الجسم العام للصفحة باستخدام الخط */
+        body {
+            font-family: 'DGAgnadeen-Bold', sans-serif;
+            background-color: #eae3df;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: white;
+            width: 60%;
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* تنسيق الصور */
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px; /* مسافة بين الصور */
+        }
+
+        .logos img {
+            width: 300px; /* نفس الحجم لكل الصور */
+            height: auto; /* الحفاظ على النسبة بين العرض والارتفاع */
+            margin-bottom: 20px;
+        }
+
+        h2, h3, h4, h5 {
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        /* تنسيق الأزرار بتدرجات لونية */
+        .buttons a {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF5722, #80091d); /* تدرج لوني برتقالي */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease; /* تأثير التمرير */
+        }
+
+        .buttons a:nth-child(2) {
+            background: linear-gradient(45deg, #0d6520, #13a722); /* تدرج لوني أزرق */
+        }
+
+        .buttons a:nth-child(3) {
+            background: linear-gradient(45deg, #7d073a, #c3604a, #7d073a); /* تدرج لوني أخضر */
+        }
+
+        .buttons a:hover {
+            opacity: 0.8; /* تخفيف لون الخلفية عند التمرير */
+        }
+
+        /* تنسيق العد التنازلي باللون الفيروزي الفاتح */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .countdown div {
+            background-color: #087278; /* اللون الفيروزي الفاتح */
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* تنسيق الرابط المعطل */
+        #register-link {
+            pointer-events: none; /* تعطيل النقر على الرابط */
+            opacity: 0.5; /* تخفيف الزر ليوضح أنه معطل */
+        }
+
+        #register-link:hover {
+            background-color: #45a049; /* التأثير عند التمرير فوق الزر */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- إضافة Flexbox لتنسيق الصور مع بعضها البعض -->
+        <div class="logos">
+            <img src="elo_logo.png" alt="Logo" class="logo">
+        </div>
+        
+        <h2>الإدارة العامة للتعليم بمحافظة الطائف </h2>
+        <h3>قسم النشاط الطلابي </h3>
+        <h4>ELO 2025 أولمبياد اللغة الإنجليزية</h4>
+
+        <!-- العد التنازلي -->
+        <div class="countdown">
+            <div><span id="days">00</span> يوم</div>
+            <div><span id="hours">00</span> ساعة</div>
+            <div><span id="minutes">00</span> دقيقة</div>
+            <div><span id="seconds">00</span> ثانية</div>
+        </div>
+        <h4>قريباً سيبدأ تسجيل الفرق في الأولمبياد</h4>
+        <!-- الأزرار -->
+        <div class="buttons">
+            <a href="guides13.html" target="_blank">أدلة المسابقة</a>
+            <a href="https://chat.whatsapp.com/JYWglMQhtpxEULVzWi4EuE" target="_blank">What's App الدخول على مجموعة</a>
+            <!-- رابط تسجيل الفرق معطل حتى انتهاء العد التنازلي -->
+            <a id="register-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeAB5UGENf4YZsTkbswpG9_6m99cXWySWiF_EsTKgopXmntWQ/viewform?usp=sf_link" target="_blank">رابط تسجيل الفرق</a>
+        </div>
+    </div>
+
+    <script>
+        // تحديد تاريخ العد التنازلي
+        var countDownDate = new Date("DEC 22, 2024 00:00:00").getTime();
+        var registerLink = document.getElementById("register-link");
+
+        // تعطيل الرابط عند بداية تحميل الصفحة
+        registerLink.style.pointerEvents = "none"; 
+        registerLink.style.opacity = "0.5";
+
+        // تحديث العد التنازلي كل ثانية
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // عرض القيم في الصفحة
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // عندما ينتهي العد التنازلي
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown").innerHTML = "التسجيل بدأ الآن!";
+                
+                // تمكين الرابط
+                registerLink.style.pointerEvents = "auto"; 
+                registerLink.style.opacity = "1";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
