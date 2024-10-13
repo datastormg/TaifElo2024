@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
+    <!-- إضافة وسم viewport لجعل الصفحة تستجيب لأحجام الشاشات المختلفة -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أولمبياد اللغة الإنجليزية 2025</title>
 
@@ -9,9 +10,9 @@
         /* تضمين الخط DGAgnadeen-Bold من ملف محلي */
         @font-face {
             font-family: 'DGAgnadeen-Bold';
-            src: url(DGAgnadeen-Bold.ttf) format('truetype'); /* المسار المحلي لملف الخط */
-            font-weight: bold; /* تحديد الوزن العريض */
-            font-style: normal; /* تحديد النمط العادي */
+            src: url('DGAgnadeen-Bold.ttf') format('truetype'); /* المسار المحلي لملف الخط */
+            font-weight: bold;
+            font-style: normal;
         }
 
         /* تنسيق الجسم العام للصفحة باستخدام الخط */
@@ -25,9 +26,10 @@
 
         .container {
             background-color: white;
-            width: 60%;
+            width: 90%;
+            max-width: 800px; /* تحديد عرض أقصى للحاوية */
             margin: 50px auto;
-            padding: 50px;
+            padding: 20px;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -37,12 +39,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 70px; /* مسافة بين الصور */
+            gap: 20px; /* مسافة بين الصور */
+            flex-wrap: wrap; /* للسماح بتغيير ترتيب الصور على الشاشات الصغيرة */
         }
 
         .logos img {
-            width: 300px; /* نفس الحجم لكل الصور */
-            height: auto; /* الحفاظ على النسبة بين العرض والارتفاع */
+            width: 100%;
+            max-width: 300px; /* عرض أقصى للصورة */
+            height: auto;
             margin-bottom: 20px;
         }
 
@@ -50,9 +54,25 @@
             margin-bottom: 10px;
         }
 
+        /* استخدام وحدات نسبية لحجم الخط */
+        h2 {
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 1.8em;
+        }
+        h4 {
+            font-size: 1.6em;
+        }
+        h5 {
+            font-size: 1.4em;
+        }
+
         .buttons {
             display: flex;
+            flex-direction: column; /* جعل الأزرار تحت بعضها على الشاشات الصغيرة */
             justify-content: center;
+            align-items: center;
             gap: 10px;
             margin: 20px 0;
         }
@@ -60,51 +80,64 @@
         /* تنسيق الأزرار بتدرجات لونية */
         .buttons a {
             display: inline-block;
-            background: linear-gradient(45deg, #FF5722, #80091d); /* تدرج لوني برتقالي */
+            background: linear-gradient(45deg, #FF5722, #80091d);
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 16px;
-            transition: background 0.3s ease; /* تأثير التمرير */
+            font-size: 1em;
+            transition: background 0.3s ease;
+            width: 80%;
+            max-width: 300px; /* عرض أقصى للزر */
+            text-align: center;
         }
 
         .buttons a:nth-child(2) {
-            background: linear-gradient(45deg, #0d6520, #13a722); /* تدرج لوني أزرق */
+            background: linear-gradient(45deg, #0d6520, #13a722);
         }
 
         .buttons a:nth-child(3) {
-            background: linear-gradient(45deg, #7d073a, #c3604a, #7d073a); /* تدرج لوني أخضر */
+            background: linear-gradient(45deg, #7d073a, #c3604a, #7d073a);
         }
 
         .buttons a:hover {
-            opacity: 0.8; /* تخفيف لون الخلفية عند التمرير */
+            opacity: 0.8;
         }
 
         /* تنسيق العد التنازلي باللون الفيروزي الفاتح */
         .countdown {
             display: flex;
+            flex-wrap: wrap; /* للسماح بتغيير ترتيب العناصر على الشاشات الصغيرة */
             justify-content: center;
             gap: 10px;
             margin-bottom: 20px;
         }
 
         .countdown div {
-            background-color: #087278; /* اللون الفيروزي الفاتح */
+            background-color: #087278;
             color: white;
             padding: 15px;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 1.2em;
+            flex: 1 1 100px; /* للسماح للعناصر بالتكيف مع حجم الشاشة */
+            text-align: center;
         }
 
         /* تنسيق الرابط المعطل */
         #register-link {
-            pointer-events: none; /* تعطيل النقر على الرابط */
-            opacity: 0.5; /* تخفيف الزر ليوضح أنه معطل */
+            pointer-events: none;
+            opacity: 0.5;
         }
 
         #register-link:hover {
-            background-color: #45a049; /* التأثير عند التمرير فوق الزر */
+            background-color: #45a049;
+        }
+
+        /* تحسين التنسيق على الشاشات الصغيرة باستخدام media queries */
+        @media (min-width: 600px) {
+            .buttons {
+                flex-direction: row; /* ترتيب الأزرار بجانب بعضها على الشاشات الأكبر */
+            }
         }
     </style>
 </head>
@@ -114,9 +147,9 @@
         <div class="logos">
             <img src="elo_logo.png" alt="Logo" class="logo">
         </div>
-        
-        <h2>الإدارة العامة للتعليم بمحافظة الطائف </h2>
-        <h3>قسم النشاط الطلابي </h3>
+
+        <h2>الإدارة العامة للتعليم بمحافظة الطائف</h2>
+        <h3>قسم النشاط الطلابي</h3>
         <h4>ELO 2025 أولمبياد اللغة الإنجليزية</h4>
 
         <!-- العد التنازلي -->
@@ -138,11 +171,11 @@
 
     <script>
         // تحديد تاريخ العد التنازلي
-        var countDownDate = new Date("DEC 22, 2024 00:00:00").getTime();
+        var countDownDate = new Date("Dec 22, 2024 00:00:00").getTime();
         var registerLink = document.getElementById("register-link");
 
         // تعطيل الرابط عند بداية تحميل الصفحة
-        registerLink.style.pointerEvents = "none"; 
+        registerLink.style.pointerEvents = "none";
         registerLink.style.opacity = "0.5";
 
         // تحديث العد التنازلي كل ثانية
@@ -165,9 +198,9 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.querySelector(".countdown").innerHTML = "التسجيل بدأ الآن!";
-                
+
                 // تمكين الرابط
-                registerLink.style.pointerEvents = "auto"; 
+                registerLink.style.pointerEvents = "auto";
                 registerLink.style.opacity = "1";
             }
         }, 1000);
