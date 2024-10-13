@@ -27,6 +27,7 @@
         .container {
             background-color: white;
             width: 80%;
+            max-width: 1000px; /* تحديد عرض أقصى للحاوية */
             margin: 50px auto;
             padding: 20px;
             border-radius: 10px;
@@ -34,15 +35,15 @@
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 3vw; /* تصغير حجم الخط للعناوين */
             margin-bottom: 20px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 1.5vw; /* تصغير حجم الخط للنص */
         }
 
-        /* تكبير حجم الخط وتقليل عرض الأزرار */
+        /* تصغير حجم الخط وتقليل عرض الأزرار */
         .button-link {
             display: block; /* جعل الأزرار تحت بعضها البعض */
             background-color: #8a2be2; /* لون بنفسجي فاتح */
@@ -51,9 +52,10 @@
             text-decoration: none;
             border-radius: 5px;
             margin: 10px 0; /* مسافة بين الأزرار */
-            font-size: 18px; /* تكبير حجم الخط */
+            font-size: 1.1vw; /* تصغير حجم الخط للأزرار */
             transition: all 0.3s ease; /* تأثير الانتقال عند التمرير */
-            width: 40%; /* تقليل عرض الأزرار */
+            width: 80%; /* تقليل عرض الأزرار */
+            max-width: 300px; /* أقصى عرض للأزرار */
             margin-left: auto;
             margin-right: auto; /* لتوسيط الأزرار */
         }
@@ -67,26 +69,59 @@
 
         /* تنسيق الصور */
         img {
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
             margin: 20px 0;
         }
 
         /* تنسيق زر العودة إلى الصفحة الرئيسية */
         .back-home {
             display: inline-block;
-            background-color: #4CAF50; /* لون أخضر */
+            background-color: #FFA500; /* لون برتقالي */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 1.2vw; /* تصغير حجم الخط */
             margin-bottom: 20px;
+            margin-top: 30px; /* إضافة مسافة من الأعلى */
             transition: background 0.3s ease;
         }
 
         .back-home:hover {
-            background-color: #45a049; /* لون أخضر أفتح عند التمرير */
+            background-color: #a06245; /* لون أغمق عند التمرير */
         }
+
+        /* استخدام media queries لتعديل التنسيقات حسب حجم الشاشة */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4vw; /* تكبير النص على الشاشات الصغيرة */
+            }
+
+            p, .button-link, .back-home {
+                font-size: 3vw; /* تكبير النص للأزرار والروابط */
+            }
+
+            .container {
+                width: 90%; /* توسيع الحاوية على الشاشات الصغيرة */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 5vw; /* زيادة حجم العنوان على الشاشات الصغيرة جدا */
+            }
+
+            p, .button-link, .back-home {
+                font-size: 4vw; /* زيادة حجم الخط للأزرار والروابط */
+            }
+
+            .container {
+                width: 95%; /* توسيع الحاوية على الشاشات الصغيرة جدا */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -98,20 +133,20 @@
     <div class="container">
         <img src="elo_logo.png" alt="Logo" width="500">
         <h1>أدلة المسابقة</h1>
-        <p>جميع الروابط التي تخص أدلة المسابقة</p>
+        
 
         <!-- روابط الأدلة على شكل أزرار -->
-        <a href="https://drive.google.com/file/d/1rRAXmgSPt5ZtgzBhFx1dFj_17sTzAjtL/view?usp=sharing" target="_blank" class="button-link">ELO  إيطارالأولمبياد</a>
+        <a href="https://drive.google.com/file/d/1rRAXmgSPt5ZtgzBhFx1dFj_17sTzAjtL/view?usp=sharing" target="_blank" class="button-link">ELO  دليل المسابقة 2014</a>
         <a href="https://drive.google.com/file/d/18NODpqDj09vqafVBitqu8kFvwZYPitW1/view?usp=sharing" target="_blank" class="button-link">Project Reserach Template </a>
         
-        <h2>Junior Level</h2>
+        <h1>Junior </h1>
         <img src="ELO-post-cri-Junior.jpg" alt="Logo">
         <a href="https://drive.google.com/file/d/1Q-H8-4OUp8pi7xc-b7plfgxlOPJSy-nB/view?usp=sharing" target="_blank" class="button-link">Judging score Theatre Show - Junior </a>
         <a href="https://drive.google.com/file/d/1rxr-xjIJtV-FdOeyakzl9AgJhsyA7rLr/view?usp=sharing" target="_blank" class="button-link">Judging Criteria Project - Junior </a>
         <a href="https://drive.google.com/file/d/1famlwE5hFQfq4WaJmoVCllLyX6_Q_JLV/view?usp=sharing" target="_blank" class="button-link">Judging Criteria English Language Proficiency - junior </a>
         <a href="https://drive.google.com/file/d/1oap_sVYK6v4ZYzoHJrgRslNzDU1lEvHA/view?usp=sharing" target="_blank" class="button-link">Judging Criteria Community service - Junior </a>
 
-        <h2>Senior Level</h2>
+        <h1>Senior </h1>
         <img src="ELO-post-cri-Senior-01.jpg" alt="Logo">
         <a href="https://drive.google.com/file/d/1sFfGX9_yjSiI7ojB2Huwu_wDdWKZS-8x/view?usp=sharing" target="_blank" class="button-link">Judging score Theatrical Performance - Senior </a>
         <a href="https://drive.google.com/file/d/12p_QIUP7JyJQ1r5N7z4IKDZ_baQKRkmR/view?usp=sharing" target="_blank" class="button-link">Judging Criteria Teamwork - Senior </a>
