@@ -91,6 +91,7 @@
             width: 80%;
             max-width: 300px; /* عرض أقصى للزر */
             text-align: center;
+            line-height: 1.5em; /* لإضافة مسافة بين الأسطر */
         }
 
         .buttons a:nth-child(2) {
@@ -122,6 +123,13 @@
             font-size: 1.2em;
             flex: 1 1 100px; /* للسماح للعناصر بالتكيف مع حجم الشاشة */
             text-align: center;
+            display: flex; /* لجعل النصوص على يسار الأرقام */
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .countdown div span {
+            margin-left: 10px; /* مسافة بين الرقم والنص الإنجليزي */
         }
 
         /* تنسيق الرابط المعطل */
@@ -170,18 +178,44 @@
 
         <!-- العد التنازلي -->
         <div class="countdown">
-            <div><span id="days">00</span> يوم</div>
-            <div><span id="hours">00</span> ساعة</div>
-            <div><span id="minutes">00</span> دقيقة</div>
-            <div><span id="seconds">00</span> ثانية</div>
+            <div>
+                <span> يوم <br>
+                    Days</span>
+                <span id="days">00</span>
+            </div>
+            <div>
+                <span>ساعة<br>
+                    Hours</span>
+                <span id="hours">00</span>
+            </div>
+            <div>
+                <span>دقيقة<br>
+                    Minutes</span>
+                <span id="minutes">00</span>
+            </div>
+            <div>
+                <span>ثانية<br>
+                    Seconds</span>
+                <span id="seconds">00</span>
+            </div>
         </div>
         <h4>قريباً سيبدأ تسجيل الفرق في الأولمبياد</h4>
+        <h4>Team registration for the Olympics will begin soon.</h4>
         <!-- الأزرار -->
         <div class="buttons">
-            <a href="guides13.html" target="_blank">أدلة المسابقة</a>
-            <a href="https://chat.whatsapp.com/JYWglMQhtpxEULVzWi4EuE" target="_blank">What's App الدخول على مجموعة</a>
+            <a href="guides13.html" target="_blank">
+                أدلة المسابقة<br>
+                Competition Resources
+            </a>
+            <a href="https://chat.whatsapp.com/JYWglMQhtpxEULVzWi4EuE" target="_blank">
+                الدخول على مجموعة<br>
+                Join WhatsApp Group
+            </a>
             <!-- رابط تسجيل الفرق معطل حتى انتهاء العد التنازلي -->
-            <a id="register-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeAB5UGENf4YZsTkbswpG9_6m99cXWySWiF_EsTKgopXmntWQ/viewform?usp=sf_link" target="_blank">رابط تسجيل الفرق</a>
+            <a id="register-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeAB5UGENf4YZsTkbswpG9_6m99cXWySWiF_EsTKgopXmntWQ/viewform?usp=sf_link" target="_blank">
+                رابط تسجيل الفرق<br>
+                Registration Link
+            </a>
         </div>
     </div>
 
