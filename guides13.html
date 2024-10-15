@@ -10,7 +10,7 @@
         /* تضمين الخط DGAgnadeen-Bold من ملف محلي */
         @font-face {
             font-family: 'DGAgnadeen-Bold';
-            src: url(DGAgnadeen-Bold.ttf) format('truetype'); /* المسار المحلي لملف الخط */
+            src: url('DGAgnadeen-Bold.ttf') format('truetype'); /* المسار المحلي لملف الخط */
             font-weight: bold; /* تحديد الوزن العريض */
             font-style: normal; /* تحديد النمط العادي */
         }
@@ -78,7 +78,7 @@
         /* تنسيق زر العودة إلى الصفحة الرئيسية */
         .back-home {
             display: inline-block;
-            background-color: #FFA500; /* لون برتقالي */
+            background-color: #de6341;  /* لون برتقالي */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -93,13 +93,27 @@
             background-color: #a06245; /* لون أغمق عند التمرير */
         }
 
+        /* الإعلان في الركن الأيسر السفلي */
+        .footer-banner {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: #eee7e5; /* لون خلفية */
+            color: rgb(12, 12, 12);
+            padding: 10px 15px;
+            font-size: 1.2vw;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
         /* استخدام media queries لتعديل التنسيقات حسب حجم الشاشة */
         @media (max-width: 768px) {
             h1 {
                 font-size: 4vw; /* تكبير النص على الشاشات الصغيرة */
             }
 
-            p, .button-link, .back-home {
+            p, .button-link, .back-home, .footer-banner {
                 font-size: 3vw; /* تكبير النص للأزرار والروابط */
             }
 
@@ -113,7 +127,7 @@
                 font-size: 5vw; /* زيادة حجم العنوان على الشاشات الصغيرة جدا */
             }
 
-            p, .button-link, .back-home {
+            p, .button-link, .back-home, .footer-banner {
                 font-size: 4vw; /* زيادة حجم الخط للأزرار والروابط */
             }
 
@@ -132,11 +146,11 @@
     <!-- حاوية أدلة المسابقة -->
     <div class="container">
         <img src="elo_logo.png" alt="Logo" width="500">
+        
         <h1>أدلة المسابقة</h1>
         
-
         <!-- روابط الأدلة على شكل أزرار -->
-        <a href="https://drive.google.com/file/d/1ec4-VLmnRl3u_3WfhA3ut-dl5N31Bo9R/view?usp=sharing" target="_blank" class="button-link">ELO  دليل المسابقة 2014</a>
+        <a href="https://drive.google.com/file/d/1rRAXmgSPt5ZtgzBhFx1dFj_17sTzAjtL/view?usp=sharing" target="_blank" class="button-link">ELO  دليل المسابقة 2014</a>
         <a href="https://drive.google.com/file/d/18NODpqDj09vqafVBitqu8kFvwZYPitW1/view?usp=sharing" target="_blank" class="button-link">Project Reserach Template </a>
         
         <h1>Junior </h1>
@@ -154,7 +168,11 @@
         <a href="https://drive.google.com/file/d/1Q7s_yUiqcJXTDluhbezgB5KJ8C6cZx9b/view?usp=sharing" target="_blank" class="button-link">Judging Criteria English Language Proficiency - Senior </a>
         <a href="https://drive.google.com/file/d/1bnoNLYoMM8twnq-IR1QrYQD4kV45_C2H/view?usp=sharing" target="_blank" class="button-link">Judging Criteria Community service - Senior </a>
         <a href="https://drive.google.com/file/d/1Jx5L8uW-dd7BlBah4u7EXFie7oNCl0D6/view?usp=sharing" target="_blank" class="button-link">English language test - Senior </a>
-        
+    </div>
+
+    <!-- إعلان الشركة في الركن الأيسر السفلي -->
+    <div class="footer-banner">
+        للدعم: أ. محمد الزهراني @ 0502055437
     </div>
 
 </body>
