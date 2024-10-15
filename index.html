@@ -22,6 +22,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative; /* للسماح بوضع الإعلان في الركن */
         }
 
         .container {
@@ -139,6 +140,21 @@
                 flex-direction: row; /* ترتيب الأزرار بجانب بعضها على الشاشات الأكبر */
             }
         }
+
+        /* تنسيق الإعلان في الركن الأيسر السفلي */
+        .footer-banner {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            background-color: #e0dad8; /* لون خلفية لافت */
+            color: rgb(3, 0, 0);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* إضافة ظل */
+            z-index: 1000; /* لجعل الإعلان يظهر فوق العناصر الأخرى */
+        }
+
     </style>
 </head>
 <body>
@@ -167,6 +183,11 @@
             <!-- رابط تسجيل الفرق معطل حتى انتهاء العد التنازلي -->
             <a id="register-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeAB5UGENf4YZsTkbswpG9_6m99cXWySWiF_EsTKgopXmntWQ/viewform?usp=sf_link" target="_blank">رابط تسجيل الفرق</a>
         </div>
+    </div>
+
+    <!-- إعلان الشركة في الركن الأيسر السفلي -->
+    <div class="footer-banner">
+        للدعم: أ. محمد الزهراني @ 0502055437
     </div>
 
     <script>
