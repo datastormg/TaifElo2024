@@ -134,8 +134,8 @@
 
         /* تنسيق الرابط المعطل */
         #register-link {
-            pointer-events: none;
-            opacity: 0.5;
+            pointer-events: auto;
+            opacity: 1;
         }
 
         #register-link:hover {
@@ -199,15 +199,15 @@
                 <span id="seconds">00</span>
             </div>
         </div>
-        <h4>قريباً سيبدأ تسجيل الفرق في الأولمبياد</h4>
-        <h4>Team registration for the Olympics will begin soon.</h4>
+        <h4>بدأ تسجيل الفرق في الأولمبياد</h4>
+        <h4>Team registration for the English Language Olympics has begun.</h4>
         <!-- الأزرار -->
         <div class="buttons">
             <a href="guides13.html" target="_blank">
                 أدلة المسابقة<br>
                 Competition Resources
             </a>
-            <a href="https://chat.whatsapp.com/KiMO3k24XJt4yKJVaQIvCj" target="_blank">
+            <a href="https://chat.whatsapp.com/JYWglMQhtpxEULVzWi4EuE" target="_blank">
                 الدخول على مجموعة<br>
                 Join WhatsApp Group
             </a>
@@ -225,13 +225,13 @@
     </div>
 
     <script>
-        // تحديد تاريخ العد التنازلي
-        var countDownDate = new Date("Dec 22, 2024 00:00:00").getTime();
+        // تحديد تاريخ العد التنازلي - إغلاق العد التنازلي في 31 أكتوبر 2024
+        var countDownDate = new Date("Oct 31, 2024 23:59:59").getTime();
         var registerLink = document.getElementById("register-link");
 
-        // تعطيل الرابط عند بداية تحميل الصفحة
-        registerLink.style.pointerEvents = "none";
-        registerLink.style.opacity = "0.5";
+        // تمكين الرابط عند بداية تحميل الصفحة
+        registerLink.style.pointerEvents = "auto";
+        registerLink.style.opacity = "1";
 
         // تحديث العد التنازلي كل ثانية
         var x = setInterval(function() {
@@ -252,11 +252,11 @@
             // عندما ينتهي العد التنازلي
             if (distance < 0) {
                 clearInterval(x);
-                document.querySelector(".countdown").innerHTML = "التسجيل بدأ الآن!";
-
-                // تمكين الرابط
-                registerLink.style.pointerEvents = "auto";
-                registerLink.style.opacity = "1";
+                document.querySelector(".countdown").innerHTML = "تم إغلاق التسجيل!";
+                
+                // تعطيل الرابط
+                registerLink.style.pointerEvents = "none";
+                registerLink.style.opacity = "0.5";
             }
         }, 1000);
     </script>
